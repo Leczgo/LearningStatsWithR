@@ -81,3 +81,7 @@ colCopy(x = fibonacci,times = 3) # using an lsr runction to cbind multiple copie
 class(cakes) # it is a matrix
 cakes.flipped <- t(cakes) #transposed the matrix (can also transpose data frames)
 itng.flipped <- tFrame(itng) #using an lsr function to transpose a dataframe
+# <codecell> working with string data
+animals <- c("cat","dog","kangaroo","whale")
+strtrim(x = animals, width = 3) # shortening all strings in a vector
+substr(x = animals,start = 2,stop = 3)
