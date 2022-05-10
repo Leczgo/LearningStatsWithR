@@ -85,3 +85,69 @@ itng.flipped <- tFrame(itng) #using an lsr function to transpose a dataframe
 animals <- c("cat","dog","kangaroo","whale")
 strtrim(x = animals, width = 3) # shortening all strings in a vector
 substr(x = animals,start = 2,stop = 3)
+# joining text
+paste("hello","world")
+paste("hello","world",sep = ".")
+hw <- c("hello","world")
+ng <- c("nasty","government")
+paste(hw,ng)
+paste(hw,ng,sep = ".",collapse = ":::")
+# splitting text
+monkey <- "It was the best of times. It was the worst of times."
+monkey.1 <- strsplit(x = monkey,split = " ",fixed = TRUE)
+text <- c("lIfe","Impact")
+# modifying text
+tolower(x = text)
+old.text <- "albino"
+chartr(old = "aln",new = "lid",x = old.text)
+# logical operators with text
+"cat" < "dog" #cat comes before dog alphabetically
+"anteater" < "ZEBRA" # returns FALSE because all uppercase occur before any lowercase
+# using the cat() function
+cat(hw,ng)
+cat(hw,ng,sep = " ")
+print("hello\nworld")
+cat("hello\nworld")
+PJ <- "P.J. O\'Rourke says, \"Yay, money!\". It\'s a joke, but no-one laughs."
+print(PJ)
+print.noquote(PJ)
+cat("xxxx\boo")    # backspace deletes last 'x' before printing
+cat("xxxx\too")    # tab space adds a tab
+cat("xxxx\noo")    # adds a new line
+cat("xxxx\roo")
+# matching & substituting (grep, gsub, etc)
+beers <- c("little creatures","sierra nevada","coopers pale")
+grep(x = beers,pattern = "er",fixed = TRUE)
+grep(pattern = "er",x = beers,fixed = TRUE,value = TRUE)
+gsub(pattern = "a", replacement = "BLAH",x = beers,fixed = TRUE)    # replaces all 'a' values
+sub(pattern = "a",replacement = "BLAH",x = beers,fixed = TRUE)    # replaces only the first 'a' in each string
+grep(x = beers,pattern = "[a,e,i,o,u]s",value = TRUE)    # using a general pattern
+# <codecell> coercing data classes
+x <- "100"
+class(x)
+x + 1
+x <- as.numeric(x)
+class(x)
+x + 1
+# <codecell> other useful data structures
+row.1 <- c(2,3,1)
+row.2 <- c(5,6,7)
+M <- rbind(row.1,row.2)    # bind into a matrix
+print( M )
+M[1,2] <- "text"    # accessing and modifying a matrix value
+class(M[1])    # accessing using single index notation; returns 'character' because all entries were coerced to characters
+# ordered factors
+likert.ordinal <- factor(x = likert.raw,
+    levels = seq(7,1,-1),
+    ordered = TRUE)
+print( likert.ordinal )
+# time and date data
+today <- Sys.Date()
+print( today )
+today + 1    # modifying the date
+today + 365
+weekdays(today)
+# <codecell> miscellaneous topics
+# problems with float values
+0.1 + 0.2 - 0.3
+all.equal(0.1 + 0.2,0.3)    # using a function that allows for small rounding
