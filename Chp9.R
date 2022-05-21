@@ -25,3 +25,5 @@ chi.20 <- rchisq(n = 1000, df = 20)
 scaled.chi.20 <- chi.20 / 20
 f.3.20 <- scaled.chi.3 / scaled.chi.20
 hist(f.3.20)
+# <codecell> making a chisq distribution
+data <-
